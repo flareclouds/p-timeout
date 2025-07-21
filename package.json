@@ -23,6 +23,7 @@
 		"node": ">=14.16"
 	},
 	"scripts": {
+		"build:cjs": "esbuild index.js --bundle --platform=node --format=cjs --outfile=index.cjs",
 		"test": "xo && ava && tsd"
 	},
 	"files": [
@@ -46,6 +47,7 @@
 	"devDependencies": {
 		"ava": "^4.3.1",
 		"delay": "^5.0.0",
+		"esbuild": "^0.25.8",
 		"in-range": "^3.0.0",
 		"p-cancelable": "^4.0.1",
 		"sinon": "^19.0.2",
