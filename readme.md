@@ -13,6 +13,17 @@ npm install p-timeout
 
 ## Usage
 
+### ES Module
+```js
+import pTimeout, {TimeoutError, AbortError} from 'p-timeout';
+```
+
+### CommonJS
+```js
+const pTimeout = require('p-timeout');
+const {TimeoutError, AbortError} = pTimeout;
+```
+
 ```js
 import {setTimeout} from 'node:timers/promises';
 import pTimeout from 'p-timeout';
@@ -188,3 +199,5 @@ await buildWall(AbortSignal.timeout(60_000))
 ```
 
 You can also combine multiple signals, like when you have a timeout *and* an `AbortController` triggered with a “Cancel” button click. You can use the upcoming [`AbortSignal.any()`](https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal/any_static) helper or [`abort-utils`](https://github.com/fregante/abort-utils/blob/main/source/merge-signals.md).
+
+```
